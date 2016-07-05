@@ -29,5 +29,5 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency 'hirb', '~> 0.7'
   gem.add_runtime_dependency 'pry-coolline', '~> 0.2'
   gem.add_runtime_dependency 'awesome_print', '~> 1.2'
-  gem.add_runtime_dependency 'railties', '>= 3.0', '< 5.0'
+  gem.add_runtime_dependency 'railties', '>= 3.0', '< 6.0'
 end
