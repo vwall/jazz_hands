@@ -3,9 +3,10 @@ require 'pry-rails'
 require 'pry-doc'
 require 'pry-git'
 require 'pry-remote'
-require 'pry-stack_explorer'
+# require 'pry-stack_explorer'
 require 'awesome_print'
-require 'jazz_hands/hirb_ext'
+require 'jazz_hands/hirb/unicode'
+require 'jazz_hands/hirb/hirb_ext'
 require 'pry-byebug'
 
 
@@ -43,7 +44,7 @@ module JazzHands
         name = app.class.parent_name.underscore
         colored_name = -> { blue.(name) }
 
-        line = ->(pry) { "[#{bold.(pry.input_array.size)}] " }
+        line = ->(pry) { "(#{bold.(pry.input_ring.size)}) " }
         target_string = ->(object, level) do
           level = 0 if level < 0
           unless (string = Pry.view_clip(object)) == 'main'
@@ -53,19 +54,22 @@ module JazzHands
           end
         end
 
-        Pry.config.prompt = [
-          ->(object, level, pry) do      # Main prompt
-            "#{line.(pry)}#{colored_name.()}#{target_string.(object, level)} #{separator.()}  "
-          end,
-          ->(object, level, pry) do      # Wait prompt in multiline input
-            spaces = ' ' * (
-              "[#{pry.input_array.size}] ".size +  # Uncolored `line.(pry)`
-              name.size +
-              target_string.(object, level).size
-            )
-            "#{spaces} #{separator.()}  "
-          end
-        ]
+        Pry.config.prompt = Pry::Prompt.new(
+          "custom",
+          "my custom prompt",
+          [
+            ->(object, level, pry) do      # Main prompt
+              "#{colored_name.()}#{target_string.(object, level)}#{line.(pry)}#{separator.()} "
+            end,
+            -> ( object, nest_level, pry) do
+              spaces = ' ' * (
+                "[#{pry.input_ring.size}] ".size +  # Uncolored `line.(pry)`
+                name.size +
+                target_string.(object, nest_level).size)
+              "#{spaces} #{separator.()}"
+            end
+          ]
+        )
       end
     end
   end
