@@ -41,7 +41,7 @@ module JazzHands
         bold = ->(text) { color[] ? "\001\e[1m\002#{text}\001\e[0m\002"    : text.to_s }
 
         separator = -> { red.(JazzHands.prompt_separator) }
-        name = app.class.parent_name.underscore
+        name = app.class.module_parent_name.underscore
         colored_name = -> { blue.(name) }
 
         line = ->(pry) { "(#{bold.(pry.input_ring.size)}) " }
