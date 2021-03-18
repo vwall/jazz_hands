@@ -7,7 +7,7 @@ require 'pry-remote'
 require 'amazing_print'
 require 'jazz_hands/hirb/unicode'
 require 'jazz_hands/hirb/hirb_ext'
-require 'pry-byebug'
+# require 'pry-byebug'
 
 
 module JazzHands
