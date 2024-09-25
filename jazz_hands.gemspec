@@ -23,7 +23,7 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency 'pry', '~> 0.14.0'
   gem.add_runtime_dependency 'pry-rails', '~> 0.3.9'
   gem.add_runtime_dependency 'pry-doc', '~> 1.4.0'
-  gem.add_runtime_dependency 'pry-git', '~> 0.2'
+  # gem.add_runtime_dependency 'pry-git', '~> 0.2'
   gem.add_runtime_dependency 'unicode-display_width', '>= 1.1'
   gem.add_runtime_dependency 'pry-remote', '~> 0.1'
   # gem.add_runtime_dependency 'pry-byebug', '~> 3.9.0'
