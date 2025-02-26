@@ -28,7 +28,7 @@ Gem::Specification.new do |gem|
   # gem.add_runtime_dependency 'pry-git', '~> 0.2'
   gem.add_runtime_dependency 'unicode-display_width', '>= 1.1'
   # gem.add_runtime_dependency 'pry-byebug', '~> 3.9.0'
-  gem.add_runtime_dependency 'hirber'
+  gem.add_runtime_dependency 'hirb'
   gem.add_runtime_dependency 'pry-coolline'
   gem.add_runtime_dependency 'railties', '>= 3.0', '< 9'
 end
