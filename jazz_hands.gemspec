@@ -20,15 +20,15 @@ Gem::Specification.new do |gem|
 
   # Dependencies
   gem.required_ruby_version = '>= 2.0.0'
-  gem.add_runtime_dependency 'pry', '~> 0.14.0'
-  gem.add_runtime_dependency 'pry-rails', '~> 0.3.11'
-  gem.add_runtime_dependency 'pry-doc', '~> 1.5.0'
+  gem.add_runtime_dependency 'amazing_print', '>= 1.4.0'
+  gem.add_runtime_dependency 'pry', '~> 0.15.0'
+  gem.add_runtime_dependency 'pry-doc'
+  gem.add_runtime_dependency 'pry-rails'
+  gem.add_runtime_dependency 'pry-remote'
   # gem.add_runtime_dependency 'pry-git', '~> 0.2'
   gem.add_runtime_dependency 'unicode-display_width', '>= 1.1'
-  gem.add_runtime_dependency 'pry-remote', '~> 0.1'
   # gem.add_runtime_dependency 'pry-byebug', '~> 3.9.0'
-  gem.add_runtime_dependency 'hirb', '~> 0.7'
-  gem.add_runtime_dependency 'pry-coolline', '~> 0.2'
-  gem.add_runtime_dependency 'amazing_print', '>= 1.4.0'
+  gem.add_runtime_dependency 'hirber'
+  gem.add_runtime_dependency 'pry-coolline'
   gem.add_runtime_dependency 'railties', '>= 3.0', '< 9'
 end
